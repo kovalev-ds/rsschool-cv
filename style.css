@@ -1,0 +1,20 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *::after, *::before {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    --gap-x: 2rem;
+    --width: 1200px;
+
+    max-width: calc(var(--width) - 2 * var(--gap-x));
+    padding-left: var(--gap-x);
+    padding-right: var(--gap-x);
+    margin-left: auto;
+    margin-right: auto;
+}
