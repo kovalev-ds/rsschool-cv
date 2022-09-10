@@ -1,15 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <title>RSSchool CV</title>
-</head>
-<body>
-    <div class="container">
-        test
-    </div>
-</body>
+  </head>
+  <body>
+    <header class="section section--lg">
+      <div class="container">
+        <div class="stack stack--place-center stack--space-y-4">
+          <img class="avatar avatar--rounded" src="./images/me.png" alt="me" />
+          <h1 class="title">
+            Denis <span class="text-accented">Kovalev</span>
+          </h1>
+          <ul
+            class="stack stack--horizontal stack--wrapped stack--place-center"
+          >
+            <li class="p-2">
+              <span class="text-accented">Location:</span> Gomel, Belarus
+            </li>
+            <li class="p-2">
+              <span class="text-accented">Phone:</span> +375 29 607 07 57
+            </li>
+            <li class="p-2">
+              <span class="text-accented">Email:</span> ds.kavaliou@gmail.com
+            </li>
+            <li class="p-2">
+              <span class="text-accented">Discord:</span> kovalev-ds
+              (@kovalev-ds)
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="title title--decorated mb-2">Profile</h2>
+        <p class="mb-2">
+          I worked as a team leader for a furniture company that is one of
+          IKEA’s clients. This gave me a huge experience and understanding of
+          the management and organization of production processes. I used
+          technologies and conceptions like 5s, lean manufacturing, kanban and
+          just in time;
+        </p>
+        <p class="mb-2">
+          A couple of years ago I got into IT because I like to solve problems
+          and find interesting solutions. The process of programming itself
+          calms and focuses, which at the moment is a good and promising hobby.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="title title--decorated mb-2">Skills</h2>
+        <ul class="list list--circle list--space-y-2">
+          <li>HTML, CSS (SCSS, BEM), JavaScript (ES6+)</li>
+          <li>CSS Frameworks (Bootstrap, Tailwind)</li>
+          <li>
+            React (Hooks, Redux, CSS in JS, Compound Components, Next.js,
+            Gatsby.js)
+          </li>
+          <li>Node.js (Express.js)</li>
+          <li>SQL (Postgres, MySql, MSSQL)</li>
+          <li>NoSQL (Mongo)</li>
+          <li>Webpack</li>
+          <li>REST, Graphql</li>
+          <li>Docker</li>
+          <li>Git/GitHub</li>
+          <li>English B1 (in proccess)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="title title--decorated mb-2">Code example</h2>
+        <h4 class="title title--upper mb-2">description:</h4>
+        <p class="mb-2">
+          Implement function check(str, bracketsConfig), that for given brackets
+          sequence will return true if it is correct and false otherwise
+        </p>
+        <p class="mb-2">
+          In the second param there is bracketsConfig - the array of pairs
+          open-closed brackets. Each subarray includes only 2 elements - opening
+          and closing bracket
+        </p>
+        <pre>
+            <code>
+                check("()", [["(", ")"]]); // -> true 
+                check("((()))()", [["(", ")"]]); // -> true 
+                check("())(", [["(", ")"]]); // -> false
+            </code>
+        </pre>
+        <h4 class="title title--upper mb-2">solution:</h4>
+        <pre>
+            <code>
+                function check(str, bracketsConfig) {
+                    return (
+                      [...str].reduce(
+                        (stack, v) =>
+                          bracketsConfig.some(
+                            ([left, right]) => stack[stack.length - 1] === left && v === right
+                          )
+                            ? (stack.pop(), stack)
+                            : (stack.push(v), stack),
+                        []
+                      ).length === 0
+                    );
+                  }
+            </code>
+        </pre>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="title title--decorated mb-2">Experience</h2>
+        <div class="stack">
+          <h4 class="title mb-2">Project ‘Momentum’:</h4>
+          <a
+            class="mb-4"
+            href="https://rolling-scopes-school.github.io/kovalev-ds-JSFEPRESCHOOL2022Q2/momentum/"
+            ><img src="./images/momentum.png" alt="momentum"
+          /></a>
+          <h4 class="title mb-2">Project Travel:</h4>
+          <a
+            class="mb-4"
+            href="https://rolling-scopes-school.github.io/kovalev-ds-JSFEPRESCHOOL2022Q2/Travel/"
+            ><img src="./images/travel.png" alt="travel"
+          /></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="title title--decorated mb-2">Education</h2>
+        <ul class="list list--circle list--space-y-2">
+          <li>
+            University: Francisk Skorina Gomel State University, Physics and IT
+            (in proccess)
+          </li>
+          <li>
+            Courses:
+            <ul class="list list--space-y-2 p-2">
+              <li>
+                JavaScript https://learn.javascript.ru/
+              </li>
+              <li>
+                RS Schools Course 2022 Q2 Certificate
+              </li>
+              <li>
+                RS Schools Course 2022 Q3 (in proccess)
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <footer class="section section--dark">
+      <div class="stack stack--place-center">
+        <a class="link link--underlined" href="https://github.com/kovalev-ds/"
+          >Denis Kovalev</a
+        >
+      </div>
+    </footer>
+  </body>
 </html>
