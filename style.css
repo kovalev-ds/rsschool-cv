@@ -14,6 +14,7 @@ html {
 
 body {
   font-family: var(--ff-sans);
+  color: #374151;
 }
 
 *,
@@ -93,8 +94,8 @@ a {
 }
 
 .section--dark {
-  background-color: #323232;
-  color: var(--clr-white);
+  background-color: rgb(226 232 240);
+  /* color: var(--clr-white); */
 }
 
 /* title */
@@ -139,8 +140,8 @@ a {
 /* avatar */
 
 .avatar {
-  height: 12rem;
-  width: 12rem;
+  height: 15rem;
+  width: 15rem;
 }
 
 .avatar--rounded {
@@ -164,6 +165,15 @@ a {
   border-bottom-color: transparent;
 }
 
+.grid {
+  display: grid;
+}
+
+.grid--experience {
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
 /* utils */
 
 .text-accented {
@@ -178,6 +188,10 @@ a {
   padding-top: 1rem;
 }
 
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
 .mb-4 {
   margin-bottom: 1rem;
 }
@@ -188,4 +202,8 @@ a {
 
 .p-2 {
   margin: 0.5rem;
+}
+
+.py-8 {
+  padding: 2rem 0;
 }
